@@ -5,7 +5,8 @@
 ```bash
 git clone https://github.com/pascran/omo-Dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./setup.sh <비밀번호>
+bash setup.sh <비밀번호>
+source ~/.zshrc && opencode
 ```
 
 비밀번호를 넣으면 API 키(5개) 자동 복호화. `/connect` 불필요.
