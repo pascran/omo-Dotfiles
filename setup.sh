@@ -68,10 +68,19 @@ else
     echo "[skip] auth.json.enc 없음 — /connect 로 수동 연결 필요"
 fi
 
+# 5. opencode 설치 (없으면 자동 설치)
+if ! command -v opencode &>/dev/null; then
+    echo ""
+    echo "opencode 미설치 — 자동 설치 중..."
+    curl -fsSL https://opencode.ai/install | bash
+    echo "[install] opencode 설치 완료"
+else
+    echo "[skip] opencode 이미 설치됨"
+fi
+# 6. 셸 환경 반영 안내
 echo ""
 echo "=== Setup Complete ==="
 echo ""
-echo "남은 작업:"
-echo "  1. opencode 설치 (안 되어있으면):  curl -fsSL https://opencode.ai/install | bash"
-echo "  2. opencode 실행 — 플러그인 자동 설치됨"
+echo "바로 사용하려면:"
+echo "  source ~/.zshrc && opencode"
 echo ""
